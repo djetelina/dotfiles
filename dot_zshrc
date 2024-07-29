@@ -1,0 +1,132 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
+
+###########
+# GENERAL #
+###########
+# Self-explanatory settings
+DEFAULT_USER=`whoami`
+HYPHEN_INSENSITIVE="true"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="dd.mm.yyyy"
+# Increase zsh history
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+# Some variables
+export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:$HOME/.poetry/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/sbin:/usr/local/opt/libressl/bin
+export PATH=$PATH:~/.local/bin:~/mygo/bin:/usr/local/opt/python/libexec/bin
+#poetry completions zsh > ~/.zfunc/_poetry
+fpath+=~/.zfunc
+autoload -U compinit && compinit
+export ZSH=~/.oh-my-zsh
+export LANG=en_US.UTF-8
+export EDITOR='vim'
+export BROWSER='chrome'
+#export BROWSER="open /Applications/Firefox.app/"
+#Linux commit signing
+export GPG_TTY=$(tty)
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+###################
+# PLUGIN SELECTOR #
+###################
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+plugins=(command-not-found git gitfast direnv pip heroku)
+
+############################
+# DIRECTORY HISTORY PLUGIN #
+############################
+
+###########
+# THEMING #
+###########
+source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=true
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_DIR_PATH_SEPARATOR=' '
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time context dir dir_writable root_indicator)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status disk_usage background_jobs kubecontext command_execution_time virtualenv vcs)
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND="black"
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND="green"
+POWERLEVEL9K_TIME_BACKGROUND="black"
+POWERLEVEL9K_TIME_FOREGROUND="green"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="green"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="black"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="green"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="black"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="green"
+POWERLEVEL9K_OS_ICON_BACKGROUND="blue"
+POWERLEVEL9K_OS_ICON_FOREGROUND="black"
+POWERLEVEL9K_STATUS_OK_BACKGROUND="green"
+POWERLEVEL9K_STATUS_OK_FOREGROUND="black"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="black"
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="green"
+POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND="black"
+POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND="green"
+POWERLEVEL9K_VIRTUALENV_BACKGROUND="black"
+POWERLEVEL9K_VIRTUALENV_FOREGROUND="green"
+POWERLEVEL9K_KUBECONTEXT_BACKGROUND="green"
+POWERLEVEL9K_KUBECONTEXT_FOREGROUND="black"
+POWERLEVEL9K_DISK_USAGE_ONLY_WARNING=true
+POWERLEVEL9K_TRANSIENT_PROMPT=always
+
+###############
+# KEYBINDINGS #
+###############
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+# PyCharm
+bindkey "\e\eOD" backward-word
+bindkey "\e\eOC" forward-word
+
+###########
+# ALIASES #
+###########
+#source ~/.bash_aliases
+source ~/.zsh_aliases
+
+#----------------------------------------------------------------------
+
+# Load oh-my-zsh, this should always be at the bottom
+source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
