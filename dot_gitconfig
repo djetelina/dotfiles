@@ -1,6 +1,9 @@
 [user]
 	name = David Jetelina
-	email = david@djetelina.cz
+    email = david@djetelina.cz
+
+[push]
+    autoSetupRemote = true
 
 [includeIf "gitdir:~/Documents/work/inuits/**"]
     path = ~/Documents/work/inuits/.gitconfig
