@@ -5,9 +5,6 @@
 [push]
     autoSetupRemote = true
 
-[includeIf "gitdir:~/Documents/work/inuits/**"]
-        path = ~/Documents/work/inuits/.gitconfig
-
 [includeIf "gitdir:~/Documents/work/phrase/**"]
         path = ~/Documents/work/phrase/.gitconfig
 
