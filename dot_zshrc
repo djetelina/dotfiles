@@ -109,6 +109,7 @@ bindkey "\e\eOC" forward-word
 source ~/.zsh_aliases
 
 #----------------------------------------------------------------------
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Load oh-my-zsh, this should always be at the bottom
 source $ZSH/oh-my-zsh.sh
