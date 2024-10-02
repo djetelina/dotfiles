@@ -27,16 +27,14 @@ setopt EXTENDED_HISTORY
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:$HOME/.poetry/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/sbin:/usr/local/opt/libressl/bin
 export PATH=$PATH:~/.local/bin:~/mygo/bin:/usr/local/opt/python/libexec/bin
 #poetry completions zsh > ~/.zfunc/_poetry
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fpath+=~/.zfunc
 autoload -U compinit && compinit
 export ZSH=~/.oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='vim'
-export BROWSER='chrome'
-#export BROWSER="open /Applications/Firefox.app/"
 #Linux commit signing
 export GPG_TTY=$(tty)
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 ###################
 # PLUGIN SELECTOR #
@@ -109,8 +107,6 @@ bindkey "\e\eOC" forward-word
 source ~/.zsh_aliases
 
 #----------------------------------------------------------------------
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
 # Load oh-my-zsh, this should always be at the bottom
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -131,3 +127,4 @@ bindkey '^[[B' history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
