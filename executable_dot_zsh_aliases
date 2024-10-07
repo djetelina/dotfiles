@@ -1,4 +1,4 @@
 alias mtfi="terraform init -var-file=../terraform.tfvars -var-file=../../terraform.tfvars -var-file=../../../../terraform.tfvars"
 alias mtfp="terraform plan -var-file=../terraform.tfvars -var-file=../../terraform.tfvars -var-file=../../../../terraform.tfvars"
 alias mtfa="terraform apply -var-file=../terraform.tfvars -var-file=../../terraform.tfvars -var-file=../../../../terraform.tfvars"
-
+alias ecrlogin="aws ecr get-login-password  --region eu-west-1 --profile memsource-internal | helm registry login --username AWS --password-stdin 333070415076.dkr.ecr.eu-west-1.amazonaws.com"
