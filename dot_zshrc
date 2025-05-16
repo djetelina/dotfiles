@@ -27,7 +27,9 @@ setopt EXTENDED_HISTORY
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:$HOME/.poetry/bin:${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/sbin:/usr/local/opt/libressl/bin
 export PATH=$PATH:~/.local/bin:~/mygo/bin:/usr/local/opt/python/libexec/bin
 #poetry completions zsh > ~/.zfunc/_poetry
+{{- if eq .chezmoi.os "darwin" -}}
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+{{- end }}
 fpath+=~/.zfunc
 autoload -U compinit && compinit
 export ZSH=~/.oh-my-zsh
@@ -39,9 +41,11 @@ export GPG_TTY=$(tty)
 ###################
 # PLUGIN SELECTOR #
 ###################
+{{- if eq .chezmoi.os "darwin" -}}
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+{{- end }}
 plugins=(command-not-found git gitfast direnv pip heroku)
 
 ############################
@@ -51,7 +55,9 @@ plugins=(command-not-found git gitfast direnv pip heroku)
 ###########
 # THEMING #
 ###########
+{{- if eq .chezmoi.os "darwin" -}}
 source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+{{- end }}
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -121,7 +127,9 @@ export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+{{- if eq .chezmoi.os "darwin" }}
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+{{- end }}
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
