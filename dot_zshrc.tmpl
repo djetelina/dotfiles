@@ -62,7 +62,7 @@ plugins=(command-not-found git gitfast direnv pip heroku)
 {{- if eq .chezmoi.os "darwin" -}}
 source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
 {{- else if eq .chezmoi.os "linux" -}}
-source /usrh/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 {{- end }}
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -133,7 +133,7 @@ export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source $ZSH_PLUGINS_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH_PLUGINS_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
