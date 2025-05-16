@@ -38,9 +38,9 @@ export EDITOR='vim'
 #Linux commit signing
 export GPG_TTY=$(tty)
 
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 export ZSH_PLUGINS_DIR="/opt/homebrew/share"
-{{- else if eq .chezmoi.os "linux" -}}
+{{ else if eq .chezmoi.os "linux" -}}
 export ZSH_PLUGINS_DIR="/usr/share/zsh/plugins"
 {{- end }}
 
@@ -59,9 +59,9 @@ plugins=(command-not-found git gitfast direnv pip heroku)
 ###########
 # THEMING #
 ###########
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" -}}
 source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
-{{- else if eq .chezmoi.os "linux" -}}
+{{ else if eq .chezmoi.os "linux" -}}
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 {{- end }}
 #ZSH_THEME="powerlevel9k/powerlevel9k"
