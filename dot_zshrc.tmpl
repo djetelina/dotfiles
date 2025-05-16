@@ -38,14 +38,18 @@ export EDITOR='vim'
 #Linux commit signing
 export GPG_TTY=$(tty)
 
+{{- if eq .chezmoi.os "darwin" -}}
+export ZSH_PLUGINS_DIR="/opt/homebrew/share"
+{{- else if eq .chezmoi.os "linux" -}}
+export ZSH_PLUGINS_DIR="/usrh/share/zsh/plugins"
+{{- end }}
+
 ###################
 # PLUGIN SELECTOR #
 ###################
-{{- if eq .chezmoi.os "darwin" -}}
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
-{{- end }}
+source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/highlighters
 plugins=(command-not-found git gitfast direnv pip heroku)
 
 ############################
@@ -57,6 +61,8 @@ plugins=(command-not-found git gitfast direnv pip heroku)
 ###########
 {{- if eq .chezmoi.os "darwin" -}}
 source /opt/homebrew/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme
+{{- else if eq .chezmoi.os "linux" -}}
+source /usrh/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 {{- end }}
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -127,9 +133,7 @@ export CLOUDSDK_PYTHON_SITEPACKAGES=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-{{- if eq .chezmoi.os "darwin" }}
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-{{- end }}
+source $ZSH_PLUGINS_DIR/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
