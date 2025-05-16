@@ -41,7 +41,7 @@ export GPG_TTY=$(tty)
 {{- if eq .chezmoi.os "darwin" -}}
 export ZSH_PLUGINS_DIR="/opt/homebrew/share"
 {{- else if eq .chezmoi.os "linux" -}}
-export ZSH_PLUGINS_DIR="/usrh/share/zsh/plugins"
+export ZSH_PLUGINS_DIR="/usr/share/zsh/plugins"
 {{- end }}
 
 ###################
