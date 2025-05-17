@@ -3,3 +3,7 @@ alias mtfp="terraform plan -var-file=../terraform.tfvars -var-file=../../terrafo
 alias mtfa="terraform apply -var-file=../terraform.tfvars -var-file=../../terraform.tfvars -var-file=../../../../terraform.tfvars"
 alias jic="jira issue create -tStory -lpre-groomed --custom Team=\"57e9df96-df00-4aaa-b4a8-67e71c2cbee7\""
 alias jich="echo 'jic -PPLAT-<number> -y<prio> -s\"<title>\"'"
+{{ if eq .chezmoi.os "linux" -}}
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+{{ -end }}
