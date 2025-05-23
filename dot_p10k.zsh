@@ -1696,6 +1696,10 @@
     prompt_example
   }
 
+  prompt_lf() {
+    p10k segment -f 208 -i 📂 -t "$LF_LEVEL" -c "$LF_LEVEL"
+  }
+
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
