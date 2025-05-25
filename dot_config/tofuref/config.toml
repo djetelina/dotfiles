@@ -1,0 +1,6 @@
+fullscreen_init_threshold = 160
+
+[theme]
+ui = "monokai"
+codeblocks = "monokai"
+borders_style = "vkey"
