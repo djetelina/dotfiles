@@ -1,6 +1,6 @@
 fullscreen_init_threshold = 160
 
 [theme]
-ui = "monokai"
-codeblocks = "monokai"
+ui = "dracula"
+codeblocks = "dracula"
 borders_style = "vkey"
