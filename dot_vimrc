@@ -22,5 +22,4 @@ set laststatus=2
 set t_Co=256
 set mouse=a
 set list
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set textwidth=0
