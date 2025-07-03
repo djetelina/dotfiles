@@ -1,0 +1,18 @@
+- name: spotify-player
+  keybinds:
+  - name: Shuffle
+    key: ^s
+  - name: Next
+    key: n
+  - name: Previous
+    key: p
+  - name: Action on selected
+    key: ^space || g a
+  - name: Action on playing
+    key: a
+  - name: Browse ...
+    key: u
+- name: lf
+  keybinds:
+  - name: Cut
+    key: delete
