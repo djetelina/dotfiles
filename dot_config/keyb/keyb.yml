@@ -15,4 +15,10 @@
 - name: lf
   keybinds:
   - name: Cut
-    key: delete
+    key: d
+  - name: Shell
+    key: w
+  - name: Editor
+    key: e
+  - name: Pager
+    key: i
