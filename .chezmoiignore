@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "darwin" -}}
+.config/tofuref/config.toml
+{{- end }}
+{{ if eq .chezmoi.os "linux" -}}
+*darwin*
+Brewfile
+{{- end }}
