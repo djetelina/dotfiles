@@ -3,3 +3,4 @@ Host *
 
 Host *.memsource.com
         User memsource
+        SetEnv TERM=xterm-256color
