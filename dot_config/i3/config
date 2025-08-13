@@ -105,8 +105,8 @@ bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # Move current workspace to the next monitor
-bindsym $mod+Shift+o move workspace to output right
-bindsym $mod+Shift+i move workspace to output left
+bindsym $mod+Shift+z move workspace to output right
+bindsym $mod+Shift+x move workspace to output left
 
 
 # resize window (you can also use the mouse for that):
