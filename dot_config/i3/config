@@ -104,6 +104,11 @@ bindcode $mod+Shift+80 	 move container to workspace  $ws8
 bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
+# Move current workspace to the next monitor
+bindsym $mod+Shift+o move workspace to output right
+bindsym $mod+Shift+i move workspace to output left
+
+
 # resize window (you can also use the mouse for that):
 mode "resize" {
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -249,11 +254,11 @@ set $ws10 "10"
 # use workspaces on different displays:
 # where you have to replace VGA-0/HDMI-0 with the names for your displays
 # you can get from xrandr command
-#workspace $ws1 output VGA-0
-#workspace $ws2 output VGA-0
-#workspace $ws3 output HDMI-0
-#workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws3 output DisplayPort-1
+workspace $ws4 output DisplayPort-1
+workspace $ws5 output DisplayPort-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="betterbird"] $ws2
@@ -316,7 +321,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id sleep 1 && feh --bg-fill ~/venom_wp_1.jpg
 
 # disable power saving (for example if using xscreensaver)
-exec --no-startup-id xset -dpms
+exec --no-startup-id xset s off -dpms s noblank
 
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
