@@ -24,7 +24,6 @@ HIST_STAMPS="dd.mm.yyyy"
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
-eval "$(atuin init zsh)"
 
 # Some variables
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:/usr/local/sbin:/usr/local/opt/libressl/bin:~/.local/bin:/usr/local/opt/python/libexec/bin
@@ -53,7 +52,7 @@ export ZSH_PLUGINS_DIR="/usr/share/zsh/plugins"
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/highlighters
-plugins=(aws command-not-found git gitfast direnv per-directory-history git-auto-fetch uv)
+plugins=(aws command-not-found git gitfast direnv git-auto-fetch uv)
 
 ###########
 # THEMING #
@@ -83,9 +82,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source $ZSH_PLUGINS_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -93,4 +89,7 @@ bindkey '^[[B' history-substring-search-down
 #----------------------------------------------------------------------
 # Load oh-my-zsh, this should always be at the bottom
 source $ZSH/oh-my-zsh.sh
+
+eval "$(atuin init zsh)"
+
 unsetopt correct_all
