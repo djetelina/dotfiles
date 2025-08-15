@@ -1,8 +1,10 @@
 .oh-my-zsh/cache/
 {{ if eq .chezmoi.os "darwin" -}}
 .config/tofuref/config.toml
+.config/i3
 {{- end }}
 {{ if eq .chezmoi.os "linux" -}}
 *darwin*
 Brewfile
+Library/Application\ Support/tofuref/config.toml
 {{- end }}
