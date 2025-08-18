@@ -1,10 +1,13 @@
 Host *
 {{- if eq .chezmoi.os "darwin" }}
-        IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 {{- else if eq .chezmoi.os "linux" }}
-        IdentityAgent "~/.1password/agent.sock"
+    IdentityAgent "~/.1password/agent.sock"
 {{- end }}
-        SetEnv TERM=xterm-256color
+    SetEnv TERM=xterm-256color
+
+Host github.com
+    IdentityFile ~/.ssh/id_rsa
 
 Host *.memsource.com
-        User memsource
+    User memsource
