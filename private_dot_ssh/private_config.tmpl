@@ -4,10 +4,12 @@ Host *
 {{- else if eq .chezmoi.os "linux" }}
     IdentityAgent "~/.1password/agent.sock"
 {{- end }}
+    IdentitiesOnly yes
     SetEnv TERM=xterm-256color
 
 Host github.com
     IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
     IdentityAgent none
 
 Host *.memsource.com
