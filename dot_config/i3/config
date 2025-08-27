@@ -275,6 +275,8 @@ for_window [class=Thunar] focus
 for_window [class=betterbird] focus
 for_window [class="BoltLauncher"] focus
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
+## test
+popup_during_fullscreen all
 
 #
 for_window [class="1Password"] floating enable
