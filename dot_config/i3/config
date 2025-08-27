@@ -274,6 +274,7 @@ for_window [class=brave] focus
 for_window [class=Thunar] focus
 for_window [class=betterbird] focus
 for_window [class="BoltLauncher"] focus
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
 
 #
 for_window [class="1Password"] floating enable
