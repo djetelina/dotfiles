@@ -26,7 +26,7 @@ export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 
 # Some variables
-export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:/usr/local/sbin:/usr/local/opt/libressl/bin:~/.local/bin:/usr/local/opt/python/libexec/bin
+#export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:/usr/local/sbin:/usr/local/opt/libressl/bin:~/.local/bin:/usr/local/opt/python/libexec/bin
 {{- if eq .chezmoi.os "darwin" -}}
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 {{- end }}
