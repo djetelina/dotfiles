@@ -29,8 +29,6 @@ setopt EXTENDED_HISTORY
 export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sbin:/usr/local/sbin:/usr/local/opt/libressl/bin:~/.local/bin:/usr/local/opt/python/libexec/bin
 {{- if eq .chezmoi.os "darwin" -}}
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-{{ else if eq .chezmoi.os "linux" -}}
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{- end }}
 fpath+=~/.zfunc
 autoload -U compinit && compinit
