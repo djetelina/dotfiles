@@ -263,8 +263,6 @@ workspace $ws5 output DisplayPort-1
 # bind program to workspace and focus to them on startup:
 assign [class="betterbird"] $ws2
 assign [class="steam.*"] $ws3
-assign [class="BoltLauncher"] $ws4
-assign [class="net-runelite.+"] $ws4
 assign [class="slack"] $ws5
 
 
@@ -273,7 +271,6 @@ for_window [class=ghostty] focus
 for_window [class=brave] focus
 for_window [class=Thunar] focus
 for_window [class=betterbird] focus
-for_window [class="BoltLauncher"] focus
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
 ## test
 popup_during_fullscreen all
