@@ -316,6 +316,9 @@ exec --no-startup-id numlockx on
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
+# activate reshift (Prague)
+exec --no-startup-id reshift -l 50.08804:14.42076
+
 # set wallpaper
 exec --no-startup-id sleep 1 && feh --bg-fill ~/venom_wp_1.jpg
 
