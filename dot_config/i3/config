@@ -186,8 +186,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+g layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -262,6 +262,7 @@ workspace $ws5 output DisplayPort-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="betterbird"] $ws2
+assign [class="element"] $ws2
 assign [class="steam.*"] $ws3
 assign [class="slack"] $ws5
 
@@ -280,6 +281,7 @@ for_window [class="1Password"] floating enable
 
 bindsym $mod+m scratchpad show
 for_window [class="Spotify"] floating enable, move to scratchpad
+for_window [class="obsidian"] floating enable, move to scratchpad
 
 
 # Swap windows
@@ -334,6 +336,10 @@ exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
 exec --no-startup-id sleep 9 && steam -system-composer
+exec --no-startup-id sleep 7 && betterbird
+exec --no-startup-id sleep 8 && element-desktop
+exec --no-startup-id sleep 10 && obsidian
+exec --no-startup-id sleep 12 && spotify
 
 ##################
 # floating rules #
