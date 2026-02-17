@@ -280,7 +280,7 @@ popup_during_fullscreen all
 for_window [class="1Password"] floating enable
 
 bindsym $mod+m scratchpad show
-for_window [class="Spotify"] floating enable, move to scratchpad
+#for_window [class="Spotify"] floating enable, move to scratchpad
 for_window [class="obsidian"] floating enable, move to scratchpad
 
 
