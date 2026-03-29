@@ -24,6 +24,8 @@ new_window pixel 1
 # Set inner/outer gaps
 gaps inner 10
 gaps outer 4
+smart_gaps on
+smart_borders on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
