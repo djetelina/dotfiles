@@ -311,9 +311,8 @@ exec --no-startup-id dex --autostart --environment i3
 # num lock activated
 exec --no-startup-id numlockx on
 
-# TODO czech keyboard
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
+exec --no-startup-id setxkbmap -layout 'us,cz' -variant ',qwerty' -option 'grp:alt_shift_toggle'
 
 
 # start a script to setup displays
