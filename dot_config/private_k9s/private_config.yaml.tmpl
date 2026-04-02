@@ -1,0 +1,48 @@
+k9s{{ .chezmoi.pathListSeparator }}
+  liveViewAutoRefresh{{ .chezmoi.pathListSeparator }} false
+  screenDumpDir{{ .chezmoi.pathListSeparator }} {{ .chezmoi.homeDir }}{{ .chezmoi.pathSeparator }}.local{{ .chezmoi.pathSeparator }}state{{ .chezmoi.pathSeparator }}k9s{{ .chezmoi.pathSeparator }}screen-dumps
+  refreshRate{{ .chezmoi.pathListSeparator }} 2
+  apiServerTimeout{{ .chezmoi.pathListSeparator }} 15s
+  maxConnRetry{{ .chezmoi.pathListSeparator }} 5
+  readOnly{{ .chezmoi.pathListSeparator }} false
+  noExitOnCtrlC{{ .chezmoi.pathListSeparator }} false
+  portForwardAddress{{ .chezmoi.pathListSeparator }} localhost
+  ui{{ .chezmoi.pathListSeparator }}
+    enableMouse{{ .chezmoi.pathListSeparator }} false
+    headless{{ .chezmoi.pathListSeparator }} false
+    logoless{{ .chezmoi.pathListSeparator }} false
+    crumbsless{{ .chezmoi.pathListSeparator }} false
+    splashless{{ .chezmoi.pathListSeparator }} false
+    reactive{{ .chezmoi.pathListSeparator }} false
+    noIcons{{ .chezmoi.pathListSeparator }} false
+    defaultsToFullScreen{{ .chezmoi.pathListSeparator }} false
+    useFullGVRTitle{{ .chezmoi.pathListSeparator }} false
+    skin{{ .chezmoi.pathListSeparator }} dracula
+  skipLatestRevCheck{{ .chezmoi.pathListSeparator }} false
+  disablePodCounting{{ .chezmoi.pathListSeparator }} false
+  shellPod{{ .chezmoi.pathListSeparator }}
+    image{{ .chezmoi.pathListSeparator }} busybox{{ .chezmoi.pathListSeparator }}1.35.0
+    namespace{{ .chezmoi.pathListSeparator }} default
+    limits{{ .chezmoi.pathListSeparator }}
+      cpu{{ .chezmoi.pathListSeparator }} 100m
+      memory{{ .chezmoi.pathListSeparator }} 100Mi
+  imageScans{{ .chezmoi.pathListSeparator }}
+    enable{{ .chezmoi.pathListSeparator }} false
+    exclusions{{ .chezmoi.pathListSeparator }}
+      namespaces{{ .chezmoi.pathListSeparator }} []
+      labels{{ .chezmoi.pathListSeparator }} {}
+  logger{{ .chezmoi.pathListSeparator }}
+    tail{{ .chezmoi.pathListSeparator }} 100
+    buffer{{ .chezmoi.pathListSeparator }} 5000
+    sinceSeconds{{ .chezmoi.pathListSeparator }} -1
+    textWrap{{ .chezmoi.pathListSeparator }} false
+    disableAutoscroll{{ .chezmoi.pathListSeparator }} false
+    showTime{{ .chezmoi.pathListSeparator }} false
+  thresholds{{ .chezmoi.pathListSeparator }}
+    cpu{{ .chezmoi.pathListSeparator }}
+      critical{{ .chezmoi.pathListSeparator }} 90
+      warn{{ .chezmoi.pathListSeparator }} 70
+    memory{{ .chezmoi.pathListSeparator }}
+      critical{{ .chezmoi.pathListSeparator }} 90
+      warn{{ .chezmoi.pathListSeparator }} 70
+  defaultView{{ .chezmoi.pathListSeparator }} ""
