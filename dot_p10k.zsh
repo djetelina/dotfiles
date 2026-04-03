@@ -41,20 +41,15 @@
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-    goenv                   # go environment (https://github.com/syndbg/goenv)
-    nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
-    toolbox                 # toolbox name (https://github.com/containers/toolbox)
     lf                      # lf shell (https://github.com/gokcehan/lf)
     vim_shell               # vim shell indicator (:sh)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     vpn_ip                # virtual private network indicator
-    per_directory_history   # Oh My Zsh per-directory-history local/global indicator
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
