@@ -247,7 +247,7 @@ set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:RS"
 set $ws5 "5:"
-set $ws6 "6"
+set $ws6 "6:"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -261,6 +261,7 @@ workspace $ws2 output DisplayPort-0
 workspace $ws3 output DisplayPort-1
 workspace $ws4 output DisplayPort-1
 workspace $ws5 output DisplayPort-1
+workspace $ws6 output DisplayPort-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="betterbird"] $ws2
