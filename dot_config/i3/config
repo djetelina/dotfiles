@@ -296,8 +296,7 @@ bindsym $mod+Shift+m mark A
 # compositor #
 ##############
 
-# TODO rename from example and add to chezmoi
-exec_always --no-startup-id picom --config  ~/.config/example.picom.conf
+exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
