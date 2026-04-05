@@ -26,6 +26,20 @@ require("lazy").setup({
   { "nvim-tree/nvim-web-devicons", config = true },
   { "folke/which-key.nvim", config = true },
 
+  -- lf file manager integration
+  { "lmburns/lf.nvim",
+    cmd = "Lf",
+    dependencies = { "akinsho/toggleterm.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+      vim.g.lf_netrw = 1
+      require("lf").setup({
+        escape_quit = false,
+        border = "rounded",
+      })
+      vim.keymap.set("n", "<M-o>", "<Cmd>Lf<CR>", { desc = "Open lf file manager" })
+    end,
+  },
+
   -- LSP
   { "mason-org/mason.nvim", config = true },
   { "mason-org/mason-lspconfig.nvim", opts = {

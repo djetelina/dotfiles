@@ -323,7 +323,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec --no-startup-id reshift -l 50.08804:14.42076
 
 # set wallpaper
-exec --no-startup-id sleep 1 && feh --bg-fill ~/venom_wp_1.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill ~/venom_wp_3.jpg
 
 # disable power saving (for example if using xscreensaver)
 exec --no-startup-id xset s off -dpms s noblank
