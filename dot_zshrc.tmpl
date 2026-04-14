@@ -23,6 +23,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="dd.mm.yyyy"
 export HISTSIZE=1000000000
 export SAVEHIST=$HISTSIZE
+export HISTFILE="${XDG_STATE_HOME}/zsh/history"
 setopt EXTENDED_HISTORY
 
 # Some variables
@@ -31,7 +32,7 @@ export PATH=/opt/homebrew/bin:$PATH:/usr/local/opt/libressl/bin:/opt/homebrew/sb
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 {{- end }}
 fpath+=~/.zfunc
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"
 export ZSH=~/.oh-my-zsh
 export LANG=en_US.UTF-8
 export EDITOR='nvim'
