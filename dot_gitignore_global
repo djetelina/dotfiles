@@ -1,3 +1,4 @@
+.worktrees/
 .idea/
 .envrc
 .terraform.lock.hcl
