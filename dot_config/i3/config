@@ -233,8 +233,10 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/brave
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym $mod+Ctrl+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id flameshot gui --clipboard
+bindsym $mod+Ctrl+s exec --no-startup-id flameshot gui --clipboard
+#bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+#bindsym $mod+Ctrl+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -350,6 +352,7 @@ exec --no-startup-id sleep 12 && slack
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="flameshot"] floating enable, border none, fullscreen disable
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
